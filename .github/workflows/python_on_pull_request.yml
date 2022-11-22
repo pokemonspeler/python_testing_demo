@@ -7,9 +7,6 @@ on:
       - test/**
       - config/**
       - .pylint.rc
-  push:
-    branch:
-      - master
 
 jobs:
   testing:
