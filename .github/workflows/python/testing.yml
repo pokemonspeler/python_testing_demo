@@ -1,4 +1,4 @@
-name: Python package
+name: Python Testing
 
 on: push
 
@@ -30,14 +30,3 @@ jobs:
         with:
           coverageFile: coverage.xml
           token: ${{ secrets.GITHUB_TOKEN }}
-
-
-
-  deploy:
-    runs-on: ubuntu-latest
-    on:
-      push: tags
-    if: ${{ github.ref_name }} == 'master'
-    steps:
-      - name: echo
-        run: echo 'deploying'
