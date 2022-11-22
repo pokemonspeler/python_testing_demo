@@ -8,6 +8,26 @@ Use the command `python -m unittest tests.test_circle.TestCircle.test_area -v` t
 
 ## generate a coverage report
 
-Use the `python -m coverage run -m unittest` command to gather coverage data  
+Use the `python -m coverage run --source=app --branch -m unittest` command to gather coverage data  
 the `python -m coverage report` command to generate a coverage report.  
-Use the python -m coverage html to generate the test coverage report in HTML format.  
+the `python -m coverage report -m` command to generate a coverage report with the missing lines.  
+the `python -m coverage report -m --skip-covered` command to generate a coverage report with the missing lines only show not fully covert files.  
+Use the `python -m coverage html` to generate the test coverage report in HTML format.  
+Use the `python -m coverage json` to generate the test coverage report in json format.  
+Use the `python -m coverage json --pretty-print` to generate the test coverage report in pretty json format.  
+Use the `python -m coverage xml` to generate the test coverage report in xml format.  
+
+## ignoring known untested lines
+
+To ignore a line that is not tested add `# pragma: no cover` at the end of the line of code.
+
+
+
+## sources
+https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution
+https://docs.github.com/en/actions/learn-github-actions/environment-variables
+https://docs.python.org/3/library/unittest.html
+https://www.pythontutorial.net/python-unit-testing/python-run-unittest/
+https://www.pythontutorial.net/python-unit-testing/python-unittest-coverage/
+https://coverage.readthedocs.io/en/6.5.0/

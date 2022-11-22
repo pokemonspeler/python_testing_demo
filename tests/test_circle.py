@@ -15,5 +15,5 @@ class TestCircle(unittest.TestCase):
             circle = Circle(-1)
 
     def test_area(self):
-        circle = Circle(2.5)
+        circle = Circle(2.6)
         self.assertAlmostEqual(circle.area(), math.pi * 2.5 * 2.5)
