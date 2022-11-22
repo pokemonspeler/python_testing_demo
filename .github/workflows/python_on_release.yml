@@ -1,10 +1,16 @@
-name: Python Deploying
+name: Python on Release
 
 on:
   release:
     types: created
 
 jobs:
+  testing:
+    uses: ./.github/workflows/action_python_testing.yml
+
+  linting:
+    uses: ./.github/workflows/action_python_linting.yml
+
   deploy:
     runs-on: ubuntu-latest
     steps:

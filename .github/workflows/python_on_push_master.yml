@@ -1,4 +1,4 @@
-name: Python Staging
+name: Python on Push Master
 
 on:
   push:
@@ -11,7 +11,6 @@ jobs:
 
   linting:
     uses: ./.github/workflows/action_python_linting.yml
-
 
   deploy:
     runs-on: ubuntu-latest
