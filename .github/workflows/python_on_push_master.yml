@@ -7,10 +7,10 @@ on:
 
 jobs:
   testing:
-    uses: ./.github/workflows/actions/python/testing.yml
+    uses: ./.github/workflows/action_python_testing.yml
 
   linting:
-    uses: ./.github/workflows/actions/python/linting.yml
+    uses: ./.github/workflows/action_python_linting.yml
 
 
   deploy:
