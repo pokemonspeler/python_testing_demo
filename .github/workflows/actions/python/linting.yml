@@ -1,0 +1,23 @@
+on:
+  workflow-call:
+
+jobs:
+  linting:
+    runs-on: ubuntu-latest
+    steps:
+      # setup
+      - uses: actions/checkout@v3
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      # dependency's
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r ./config/requirements.txt
+          pip install -r config/requirements-linting.txt
+      # Linting
+      - name: Analysing the code with pylint
+        run: |
+          pylint $(git ls-files '*.py')
