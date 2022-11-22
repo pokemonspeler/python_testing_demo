@@ -11,3 +11,6 @@ class Circle(Shape):
 
     def area(self) -> float:
         return math.pi * math.pow(self._radius, 2)
+
+    def diameter(self) -> float:
+        return self._radius * 2
