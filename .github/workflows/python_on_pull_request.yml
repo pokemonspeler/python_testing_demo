@@ -32,7 +32,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           thresholdAll: 0.8
           thresholdNew: 0.9
-          thresholdModified: 1.0
+          thresholdModified: 0
 
   linting:
     runs-on: ubuntu-latest
