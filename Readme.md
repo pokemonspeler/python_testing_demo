@@ -1,3 +1,5 @@
+[![Deployment to Staging](https://github.com/pokemonspeler/python_testing_demo/actions/workflows/python_on_push_master.yml/badge.svg?branch=master)](https://github.com/pokemonspeler/python_testing_demo/actions/workflows/python_on_push_master.yml)
+[![Deployment to Production](https://github.com/pokemonspeler/python_testing_demo/actions/workflows/python_on_release.yml/badge.svg)](https://github.com/pokemonspeler/python_testing_demo/actions/workflows/python_on_release.yml)
 ## run unit test
 
 Place the development code and test code in separate directories. It’s a good practice to store the test code in the
