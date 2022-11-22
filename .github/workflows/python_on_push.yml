@@ -6,8 +6,43 @@ jobs:
   setup:
     runs-on: ubuntu-latest
     steps:
+      # setup
       - uses: actions/checkout@v3
+      - name: Set up Python 3.10
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      # dependency's
       - name: Install dependencies
         run: |
-          ls -al
-          ls -al setup
+          python -m pip install --upgrade pip
+          pip install -r ./config/requirements.txt
+
+  testing:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: pip install -r config/requirements-testing.txt
+      # testing
+      - name: Test with pytest
+        run: coverage run --source=app --branch -m unittest discover -v
+      - name: Testing rapport
+        run: python -m coverage xml
+      # display report
+      - name: Get Cover
+        uses: orgoro/coverage@v3
+        with:
+          coverageFile: coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  linting:
+    needs: [setup]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install dependencies
+        run: pip install -r config/requirements-linting.txt
+      # Linting
+      - name: Analysing the code with pylint
+        run: |
+          pylint $(git ls-files '*.py')
