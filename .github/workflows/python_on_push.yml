@@ -2,10 +2,11 @@ name: Python Testing
 
 on: push
 
+runs-on: ubuntu-latest
+
 jobs:
   setup:
     steps:
-      - uses: actions/checkout@v2
       # setup
       - uses: actions/checkout@v3
       - name: Set up Python 3.10
@@ -19,7 +20,7 @@ jobs:
           pip install -r setup/requirements.txt
 
   testing:
-    runs-on: ubuntu-latest
+    needs: [setup]
     steps:
       - name: Install dependencies
         run: pip install -r setup/requirements-testing.txt
@@ -36,7 +37,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   linting:
-    runs-on: ubuntu-latest
+    needs: [setup]
     steps:
       - name: Install dependencies
         run: pip install -r setup/requirements-linting.txt

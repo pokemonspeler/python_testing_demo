@@ -1,13 +1,12 @@
 name: Python Deploying
 
 on:
-  push:
-    branches: master
-    tags:
+  release:
+    types: created
 
+runs-on: ubuntu-latest
 jobs:
   deploy:
-    runs-on: ubuntu-latest
     steps:
       # setup
       - uses: actions/checkout@v3
