@@ -1,9 +1,10 @@
 name: Python package
 jobs:
+  on: [ push, tag ]
 
   test:
     runs-on: ubuntu-latest
-    on: [ push ]
+    on: push
     steps:
       # setup
       - uses: actions/checkout@v3
@@ -26,14 +27,14 @@ jobs:
       - name: Get Cover
         uses: orgoro/coverage@v3
         with:
-         coverageFile: coverage.xml
-         token: ${{ secrets.GITHUB_TOKEN }}
+          coverageFile: coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-          
+
 
   deploy:
     runs-on: ubuntu-latest
-    on: [ tag ]
+    on: tag
     if: ${{ github.ref_name }} == 'master'
     steps:
       - name: echo
