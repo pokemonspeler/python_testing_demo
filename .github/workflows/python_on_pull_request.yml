@@ -1,6 +1,6 @@
 name: Python Testing
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   testing:
@@ -24,8 +24,8 @@ jobs:
       - name: Testing rapport
         run: python -m coverage xml
       # display report
-      - name: Get Cover
-        if: github.event_name == 'pull_request'
+      - name: Get Coverage
+#        if: github.event_name == 'pull_request'
         uses: orgoro/coverage@v3
         with:
           coverageFile: coverage.xml
