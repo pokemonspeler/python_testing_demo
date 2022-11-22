@@ -1,6 +1,7 @@
 name: Python package
 jobs:
-  on: push
+  on:
+    - push
 
   test:
     runs-on: ubuntu-latest
