@@ -2,10 +2,9 @@ name: Python Testing
 
 on: push
 
-runs-on: ubuntu-latest
-
 jobs:
   setup:
+    runs-on: ubuntu-latest
     steps:
       # setup
       - uses: actions/checkout@v3
@@ -21,6 +20,7 @@ jobs:
 
   testing:
     needs: [setup]
+    runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
         run: pip install -r setup/requirements-testing.txt
@@ -38,6 +38,7 @@ jobs:
 
   linting:
     needs: [setup]
+    runs-on: ubuntu-latest
     steps:
       - name: Install dependencies
         run: pip install -r setup/requirements-linting.txt
