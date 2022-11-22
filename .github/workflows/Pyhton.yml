@@ -36,5 +36,5 @@ jobs:
     on: [ tag ]
     if: ${{ github.ref_name }} == 'master'
     steps:
-      name: echo
-      run: echo 'deploying'
+      - name: echo
+        run: echo 'deploying'
