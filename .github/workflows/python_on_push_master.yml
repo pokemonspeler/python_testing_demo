@@ -28,4 +28,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r config/requirements.txt
       - name: echo
-        run: echo 'deploying to staging'
+        run: echo 'deploying to staging with token ${{ secrets.DEPLOY_TOKEN }}'
