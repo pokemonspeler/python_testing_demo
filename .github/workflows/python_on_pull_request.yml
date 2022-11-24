@@ -6,7 +6,7 @@ on:
       - app/**
       - test/**
       - config/**
-      - .pylint.rc
+      - .pylintrc
 
 jobs:
   testing:
