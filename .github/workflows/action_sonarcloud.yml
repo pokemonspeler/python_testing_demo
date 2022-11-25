@@ -1,5 +1,10 @@
 on:
   workflow_call:
+    secrets:
+      github_token:
+        required: true
+      sonar_token:
+        required: true
 
 jobs:
   sonarcloud:
@@ -12,5 +17,5 @@ jobs:
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ github_token }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ sonar_token }}
