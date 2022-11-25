@@ -7,6 +7,7 @@ on:
       - test/**
       - config/**
       - .pylintrc
+      - .github/workflows/**
 
 jobs:
   testing:
