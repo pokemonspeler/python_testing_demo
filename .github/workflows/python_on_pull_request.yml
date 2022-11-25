@@ -20,5 +20,5 @@ jobs:
     uses: ./.github/workflows/action_sonarcloud.yml
     with:
     secrets:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
-      sonar_token: ${{ secrets.SONAR_TOKEN }}
+      github: ${{ secrets.GITHUB_TOKEN }}
+      sonar: ${{ secrets.SONAR_TOKEN }}
