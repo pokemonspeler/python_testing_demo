@@ -10,11 +10,11 @@ on:
 
 jobs:
   testing:
-    - uses: ./.github/workflows/action_python_testing.yml
+    uses: ./.github/workflows/action_python_testing.yml
 
   linting:
-    - uses: ./.github/workflows/action_python_linting.yml
+    uses: ./.github/workflows/action_python_linting.yml
 
   sonar:
-    - uses: ./.github/workflows/action_sonarcloud.yml
-      secrets: inherit
+    uses: ./.github/workflows/action_sonarcloud.yml
+    secrets: inherit
