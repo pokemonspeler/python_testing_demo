@@ -18,5 +18,9 @@ jobs:
           pip install -r config/requirements-linting.txt
       # Linting
       - name: Analysing the code with pylint
-        run: |
-          pylint $(git ls-files '*.py')
+        run: pylint $(git ls-files '*.py') --output-format=parseable --output=pylint.log
+      - uses: actions/upload-artifact@v2
+        with:
+          name: pylint-report
+          path: ./pylint.log
+          retention-days: 14
