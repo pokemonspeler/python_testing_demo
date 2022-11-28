@@ -31,7 +31,7 @@ jobs:
           thresholdAll: 0.8
           thresholdNew: 0.9
           thresholdModified: 0 # looks at all modified lines not only the python files
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: coverage-testing-report
           path: ./coverage.xml

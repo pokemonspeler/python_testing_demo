@@ -19,7 +19,7 @@ jobs:
       # Linting
       - name: Analysing the code with pylint
         run: pylint $(git ls-files '*.py') --output-format=parseable --output=pylint.log
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: pylint-report
           path: ./pylint.log
