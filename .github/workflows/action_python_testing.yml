@@ -31,3 +31,8 @@ jobs:
           thresholdAll: 0.8
           thresholdNew: 0.9
           thresholdModified: 0 # looks at all modified lines not only the python files
+      - uses: actions/upload-artifact@v2
+        with:
+          name: coverage-testing-report
+          path: ./coverage.xml
+          retention-days: 14
